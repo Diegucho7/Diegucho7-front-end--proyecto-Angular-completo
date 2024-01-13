@@ -23,6 +23,7 @@ export class LoginPageComponent {
 
   login(){
     const {email,password} = this.myForm.value;
+
     this.AuthService.login(email,password).
     subscribe({
       next: () => this.router.navigateByUrl('/dasboard'),
