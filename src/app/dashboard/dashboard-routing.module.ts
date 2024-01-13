@@ -4,7 +4,7 @@ import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-l
 
 const routes: Routes = [
   {
-    path:'dashboard',
+    path:'',
     component: DashboardLayoutComponent,
     
   }
