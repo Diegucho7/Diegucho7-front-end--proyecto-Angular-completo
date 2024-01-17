@@ -9,10 +9,10 @@ import { AuthStatus } from './auth/interfaces';
 })
 export class AppComponent {
   
-  private AuthService = inject (AuthService);
+  private authService = inject (AuthService);
 
   public finishedAuthCheck = computed<boolean>(() =>{
-    if(this.AuthService.authStatus()=== AuthStatus.checking){
+    if(this.authService.authStatus() === AuthStatus.checking){
 
       return false;
 
@@ -22,8 +22,9 @@ export class AppComponent {
   });
 
   public authStatusChangedEffect = effect(() => {
-    console.log('authStatus:',this.AuthService.authStatus());
-  })
+    
+    console.log('authStatus:',this.authService.authStatus());
+  });
 
   
 }

@@ -18,17 +18,19 @@ export class AuthService {
   private _currentUser = signal<User|null> (null);
   private _authStatus = signal <AuthStatus>(AuthStatus.checking);
 
-  // !Al mundoexterior
+  // !Al mundo exterior
 
   public currentUser = computed( ()=> this._currentUser());
   public authStatus = computed( ()=> this._authStatus());
 
-  constructor() { }
+  constructor() { 
+    this.checkAuthStatus().subscribe();
+  }
 
   private setAuthentication(user:User, token:string ):boolean{
     this._currentUser.set(user);
     this._authStatus.set(AuthStatus.authenticated);
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', token); 
     return true;
   }
 
