@@ -12,13 +12,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPageComponent {
 
-  private fb          = inject (FormBuilder);
+  
+private fb          = inject (FormBuilder);
   private AuthService = inject(AuthService);
   private router      = inject ( Router )
-
   public myForm: FormGroup = this.fb.group({
-    email:['', [Validators.required, Validators.email]],
-    password:['', [Validators.required, Validators.minLength(6)]]
+    email:['dvelarde140@gmail.com', [Validators.required, Validators.email]],
+    password:['123456', [Validators.required, Validators.minLength(6)]]
   });
 
   login(){

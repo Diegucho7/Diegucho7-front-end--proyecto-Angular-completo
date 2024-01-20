@@ -4,9 +4,25 @@
       (ngSubmit)="save()">
 
     <span class="login100-form-title p-b-49">
-        Login
+        Registro
     </span>
 
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Nombre</span>
+        <input class="input100"
+               type="string"
+               placeholder="Nombre"
+               formControlName="name">
+        <span class="focus-input100"></span>
+    </div>
+    <div class="wrap-input100 m-b-23">
+        <span class="label-input100">Apellido</span>
+        <input class="input100"
+               type="string"
+               placeholder="Apellido"
+               formControlName="lastname">
+        <span class="focus-input100"></span>
+    </div>
     <div class="wrap-input100 m-b-23">
         <span class="label-input100">Correo</span>
         <input class="input100"
@@ -24,6 +40,16 @@
                formControlName="password">
         <span class="focus-input100"></span>
     </div>
+    <div class="wrap-input100">
+        <span class="label-input100">Repita Contraseña</span>
+        <input class="input100"
+               type="password"
+               placeholder="Repita la contraseña"
+               formControlName="password2">
+        <span class="focus-input100"></span>
+    </div>
+
+    
 
     <div class="text-right p-t-8 p-b-31"></div>
 
@@ -38,7 +64,7 @@
         </div>
     </div>
 
-    <div class="flex-col-c p-t-60">
+    <!-- <div class="flex-col-c p-t-60">
         <span class="txt1 p-b-17">
             ¿No tienes cuenta?
         </span>
@@ -46,5 +72,5 @@
         <a routerLink="/auth/register" class="txt2">
             Crear una aquí
         </a>
-    </div>
+    </div> -->
 </form>
