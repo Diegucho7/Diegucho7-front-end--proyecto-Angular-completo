@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
+import { json } from 'express';
 
 
 @Component({
@@ -10,13 +11,26 @@ import { Router } from '@angular/router';
 })
 
 
+
 export class RegisterPageComponent {
 
   private fb          = inject (FormBuilder);
   private registerService = inject(RegisterService);
   private router      = inject ( Router )
 
-  public myForm: FormGroup = this.fb.group({
+  // constructor(
+  //   name : String ,
+  //   lastname : String ,
+  //   email : String ,
+  //   password : String ,
+  //   password2 : String 
+  //   ){
+
+  // }
+
+
+
+  public Form: FormGroup = this.fb.group({
    
     name:['',[Validators.required, Validators.minLength(6)]],
     lastname:['',[Validators.required, Validators.minLength(6)]],
@@ -26,7 +40,7 @@ export class RegisterPageComponent {
     
   });
   save(){
-    
+    console.log("hola mundo");
   }
 
 }
