@@ -40,7 +40,6 @@ export class RegisterPageComponent {
     
   });
   save(){
-    console.log({this.fb.FormGroup});
   }
 
 }
