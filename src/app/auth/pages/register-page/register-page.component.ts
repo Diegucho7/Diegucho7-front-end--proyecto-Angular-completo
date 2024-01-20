@@ -40,7 +40,7 @@ export class RegisterPageComponent {
     
   });
   save(){
-    console.log("hola mundo");
+    console.log({this.fb.FormGroup});
   }
 
 }
