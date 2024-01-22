@@ -4,7 +4,7 @@ import { environments } from '../../environments/environments';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 
 import { User } from '../interfaces/user-interface';
-import { AuthStatus, CheckTokenResponse, LoginResponse } from '../interfaces';
+import { AuthStatus, CheckTokenResponse, LoginResponse, RegisterResponse } from '../interfaces';
 import { response } from 'express';
 
 @Injectable({
@@ -77,11 +77,20 @@ export class AuthService {
     }
 
 
+
     logout(){
       localStorage.removeItem('token');
       this._currentUser.set(null);
       this._authStatus.set(AuthStatus.notAuthenticated);
     }
+
+
+
+    register(registerResponse: RegisterResponse): Observable<RegisterResponse>{
+      
+        return this.http.post<RegisterResponse>(`${this.baseUrl}/user/`,registerResponse);
+    }
+    
 
 
 }
