@@ -3,6 +3,9 @@ import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from '../../services/register.service';
 import { Router } from '@angular/router';
 import { json } from 'express';
+import { AuthService } from '../../services/auth.service';
+import { register } from 'module';
+import { RegisterResponse } from '../../interfaces';
 
 
 @Component({
@@ -18,19 +21,16 @@ export class RegisterPageComponent {
   private registerService = inject(RegisterService);
   private router      = inject ( Router )
 
-  // constructor(
-  //   name : String ,
-  //   lastname : String ,
-  //   email : String ,
-  //   password : String ,
-  //   password2 : String 
-  //   ){
+  get currentHero(): RegisterResponse{
 
-  // }
+    const userRegister = this.UserForm.value as RegisterResponse;
+    return userRegister;
+
+  }
 
 
 
-  public Form: FormGroup = this.fb.group({
+  public UserForm: FormGroup = this.fb.group({
    
     name:['',[Validators.required, Validators.minLength(6)]],
     lastname:['',[Validators.required, Validators.minLength(6)]],
@@ -39,7 +39,8 @@ export class RegisterPageComponent {
     password2:['', [Validators.required, Validators.minLength(6)]],
     
   });
-  save(){
+  register(){
+    //  this.AuthService.register
   }
 
 }
